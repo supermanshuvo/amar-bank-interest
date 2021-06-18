@@ -1,19 +1,18 @@
 <template>
-  <nav>
-    <v-toolbar color="blue" dense flat>
-        <v-container>
-            <v-toolbar-title class="white--text">Amar Bank Interest Calculator</v-toolbar-title>
-        </v-container>
-    </v-toolbar>
-  </nav>
+  <v-app>
+    <Nav />
+  </v-app>
 </template>
 
 <script>
+import Nav from './Nav.vue'
+
 export default {
-    name:'Home',
+  name: 'Home',
+  components: {
+    Nav
+  }
 }
 </script>
 
-<style>
 
-</style>
