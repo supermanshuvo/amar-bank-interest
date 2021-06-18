@@ -59,7 +59,7 @@
             <v-col cols="6">
                 <v-text-field
                 label="Principal Amount"
-                :value="principal_amount"
+                :value="no_of_months"
                 prefix="$"
                 ></v-text-field>
             </v-col>
@@ -71,7 +71,7 @@
             <v-col cols="6">
                 <v-text-field
                 label="Interest Amount"
-                :value="interest_amount"
+                :value="annual_interest_rate"
                 prefix="$"
                 ></v-text-field>
             </v-col>
@@ -83,7 +83,7 @@
             <v-col cols="6">
                 <v-text-field
                 label="Total Amount"
-                :value="total_amount"
+                :value="dps_amount"
                 prefix="$"
                 ></v-text-field>
             </v-col>
