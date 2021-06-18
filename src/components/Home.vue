@@ -21,6 +21,7 @@
                 value="10.00"
                 prefix="$"
                 outlined
+                v-model="dps_amount"
                 ></v-text-field>
             </v-col>
         </v-row>
@@ -34,6 +35,7 @@
                 value="10.00"
                 prefix="%"
                 outlined
+                v-model="annual_interest_rate"
                 ></v-text-field>
             </v-col>
         </v-row>
@@ -46,6 +48,7 @@
                 label="Months"
                 value="10"
                 outlined
+                v-model="no_of_months"
                 ></v-text-field>
             </v-col>
         </v-row>
@@ -99,9 +102,12 @@ export default {
   },
   data(){
       return{
-          
+          dps_amount:"",
+          annual_interest_rate:"",
+          no_of_months:"",
       }
-  }
+  },
+  
 }
 </script>
 
