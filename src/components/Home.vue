@@ -30,9 +30,9 @@
             </v-col>
             <v-col cols="6">
                 <v-text-field
-                label="Amount"
+                label="Rate"
                 value="10.00"
-                prefix="$"
+                prefix="%"
                 outlined
                 ></v-text-field>
             </v-col>
@@ -43,9 +43,8 @@
             </v-col>
             <v-col cols="6">
                 <v-text-field
-                label="Amount"
-                value="10.00"
-                prefix="$"
+                label="Months"
+                value="10"
                 outlined
                 ></v-text-field>
             </v-col>
@@ -59,7 +58,6 @@
                 label="Amount"
                 value="10.00"
                 prefix="$"
-                outlined
                 ></v-text-field>
             </v-col>
         </v-row>
@@ -72,7 +70,6 @@
                 label="Amount"
                 value="10.00"
                 prefix="$"
-                outlined
                 ></v-text-field>
             </v-col>
         </v-row>
@@ -85,7 +82,6 @@
                 label="Amount"
                 value="10.00"
                 prefix="$"
-                outlined
                 ></v-text-field>
             </v-col>
         </v-row>
