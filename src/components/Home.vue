@@ -58,8 +58,8 @@
             </v-col>
             <v-col cols="6">
                 <v-text-field
-                label="Amount"
-                value="10.00"
+                label="Principal Amount"
+                :value="principal_amount"
                 prefix="$"
                 ></v-text-field>
             </v-col>
@@ -70,8 +70,8 @@
             </v-col>
             <v-col cols="6">
                 <v-text-field
-                label="Amount"
-                value="10.00"
+                label="Interest Amount"
+                :value="interest_amount"
                 prefix="$"
                 ></v-text-field>
             </v-col>
@@ -82,8 +82,8 @@
             </v-col>
             <v-col cols="6">
                 <v-text-field
-                label="Amount"
-                value="10.00"
+                label="Total Amount"
+                :value="total_amount"
                 prefix="$"
                 ></v-text-field>
             </v-col>
@@ -107,7 +107,9 @@ export default {
           no_of_months:"",
       }
   },
-  
+  methods:{
+      
+  }
 }
 </script>
 
