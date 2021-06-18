@@ -7,8 +7,8 @@
                 <v-subheader>Starting Date : </v-subheader>
             </v-col>
             <v-col cols="6">
-                <v-text-field :value="date" slot="activator" label="Starting Date : "></v-text-field>
-                <v-date-picker v-model="date"></v-date-picker>
+                <v-text-field value="" slot="activator" label="Starting Date : "></v-text-field>
+                <!-- <v-date-picker v-model="date"></v-date-picker> -->
             </v-col>
         </v-row>
         <v-row>
@@ -99,7 +99,7 @@ export default {
   },
   data(){
       return{
-          date:''
+          
       }
   }
 }
