@@ -113,18 +113,24 @@ export default {
   },
   computed:{
       total_principal_amount(){
-          return this.dps_amount * this.no_of_months;
+          var cal = this.dps_amount * this.no_of_months;
+          var result = cal.toFixed(2);
+          return result;
       },
       total_interest_amount(){
           var number = 2400;
-          return this.dps_amount*this.no_of_months*this.annual_interest_rate*(this.no_of_months+1)/number;
+          var cal = this.dps_amount*this.no_of_months*this.annual_interest_rate*(this.no_of_months+1)/number;
+          var result = cal.toFixed(2);
+          return result;
       },
       total_amount(){
           var number = 2400;
           var mul = this.dps_amount*this.no_of_months;
           var div = this.annual_interest_rate*(this.no_of_months+1)/number;
           var add = 1+div;
-          return mul*add;
+          var cal = mul*add;
+          var result = cal.toFixed(2);
+          return result;
       }
   }
 }
