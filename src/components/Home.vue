@@ -22,6 +22,7 @@
                 prefix="$"
                 outlined
                 v-model="dps_amount"
+                type="number"
                 ></v-text-field>
             </v-col>
         </v-row>
@@ -36,6 +37,7 @@
                 prefix="%"
                 outlined
                 v-model="annual_interest_rate"
+                type="number"
                 ></v-text-field>
             </v-col>
         </v-row>
@@ -49,6 +51,7 @@
                 value="10"
                 outlined
                 v-model="no_of_months"
+                type="number"
                 ></v-text-field>
             </v-col>
         </v-row>
@@ -59,7 +62,7 @@
             <v-col cols="6">
                 <v-text-field
                 label="Principal Amount"
-                :value="no_of_months"
+                :value="total_principal_amount"
                 prefix="$"
                 ></v-text-field>
             </v-col>
@@ -71,7 +74,7 @@
             <v-col cols="6">
                 <v-text-field
                 label="Interest Amount"
-                :value="annual_interest_rate"
+                :value="total_interest_amount"
                 prefix="$"
                 ></v-text-field>
             </v-col>
@@ -83,7 +86,7 @@
             <v-col cols="6">
                 <v-text-field
                 label="Total Amount"
-                :value="dps_amount"
+                :value="total_amount"
                 prefix="$"
                 ></v-text-field>
             </v-col>
@@ -102,13 +105,20 @@ export default {
   },
   data(){
       return{
-          dps_amount:"",
-          annual_interest_rate:"",
-          no_of_months:"",
+          dps_amount:0,
+          annual_interest_rate:0,
+          no_of_months:0,
+          principal_amount:0,
       }
   },
-  methods:{
-      
+  computed:{
+      total_principal_amount(){
+          return this.dps_amount * this.no_of_months;
+      },
+      total_interest_amount(){
+          var number = 2400;
+          return this.dps_amount*this.no_of_months*this.annual_interest_rate*(this.no_of_months+1)/number;
+      },
   }
 }
 </script>
