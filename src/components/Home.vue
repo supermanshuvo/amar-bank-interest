@@ -107,29 +107,36 @@ export default {
       return{
           dps_amount:0,
           annual_interest_rate:0,
-          no_of_months:0,
-          principal_amount:0,
+          no_of_months:0
       }
   },
   computed:{
       total_principal_amount(){
-          var cal = this.dps_amount * this.no_of_months;
-          var result = cal.toFixed(2);
+          let dps = parseFloat(this.dps_amount);
+          let month = parseFloat(this.no_of_months);
+          let cal = dps * month;
+          let result = cal.toFixed(2);
           return result;
       },
       total_interest_amount(){
-          var number = 2400;
-          var cal = this.dps_amount*this.no_of_months*this.annual_interest_rate*(this.no_of_months+1)/number;
-          var result = cal.toFixed(2);
-          return result;
+            let number = 2400;
+            let dps = parseFloat(this.dps_amount);
+            let month = parseFloat(this.no_of_months);
+            let rate = parseFloat(this.annual_interest_rate);
+            let cal = (dps*rate*month*(month+1))/number;
+            let result = cal.toFixed(2);
+            return result;
       },
       total_amount(){
-          var number = 2400;
-          var mul = this.dps_amount*this.no_of_months;
-          var div = this.annual_interest_rate*(this.no_of_months+1)/number;
-          var add = 1+div;
-          var cal = mul*add;
-          var result = cal.toFixed(2);
+          let number = 2400;
+          let dps = parseFloat(this.dps_amount);
+          let month = parseFloat(this.no_of_months);
+          let rate = parseFloat(this.annual_interest_rate);
+          let mul = dps*month;
+          let div = (rate*(month+1))/number;
+          let add = 1+parseFloat(div);
+          let cal = mul*add;
+          let result = cal.toFixed(2);
           return result;
       }
   }
