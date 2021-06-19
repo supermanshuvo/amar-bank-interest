@@ -119,6 +119,13 @@ export default {
           var number = 2400;
           return this.dps_amount*this.no_of_months*this.annual_interest_rate*(this.no_of_months+1)/number;
       },
+      total_amount(){
+          var number = 2400;
+          var mul = this.dps_amount*this.no_of_months;
+          var div = this.annual_interest_rate*(this.no_of_months+1)/number;
+          var add = 1+div;
+          return mul*add;
+      }
   }
 }
 </script>
