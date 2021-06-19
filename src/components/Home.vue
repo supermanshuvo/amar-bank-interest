@@ -13,7 +13,7 @@
         </v-row>
         <v-row>
             <v-col cols="3">
-                <v-subheader>DPS Amount</v-subheader>
+                <v-subheader>DPS Amount:</v-subheader>
             </v-col>
             <v-col cols="6">
                 <v-text-field
@@ -28,11 +28,11 @@
         </v-row>
         <v-row>
             <v-col cols="3">
-                <v-subheader>Annual Interest Rate: </v-subheader>
+                <v-subheader>Annual Interest Percentage:</v-subheader>
             </v-col>
             <v-col cols="6">
                 <v-text-field
-                label="Rate"
+                label="Percentage"
                 value="10.00"
                 prefix="%"
                 outlined
@@ -43,7 +43,7 @@
         </v-row>
         <v-row>
             <v-col cols="3">
-                <v-subheader>No. Of Months :</v-subheader>
+                <v-subheader>No. Of Months:</v-subheader>
             </v-col>
             <v-col cols="6">
                 <v-text-field
@@ -57,7 +57,7 @@
         </v-row>
         <v-row>
             <v-col cols="3">
-                <v-subheader>Principal Amount :</v-subheader>
+                <v-subheader>Principal Amount:</v-subheader>
             </v-col>
             <v-col cols="6">
                 <v-text-field
@@ -69,7 +69,7 @@
         </v-row>
         <v-row>
             <v-col cols="3">
-                <v-subheader>Interest Amount :</v-subheader>
+                <v-subheader>Interest Amount:</v-subheader>
             </v-col>
             <v-col cols="6">
                 <v-text-field
@@ -81,7 +81,7 @@
         </v-row>
         <v-row>
             <v-col cols="3">
-                <v-subheader>Total Amount :</v-subheader>
+                <v-subheader>Total Amount:</v-subheader>
             </v-col>
             <v-col cols="6">
                 <v-text-field
@@ -105,9 +105,9 @@ export default {
   },
   data(){
       return{
-          dps_amount:0,
-          annual_interest_rate:0,
-          no_of_months:0
+          dps_amount:'',
+          annual_interest_rate:'',
+          no_of_months:''
       }
   },
   computed:{
@@ -116,7 +116,8 @@ export default {
           let month = parseFloat(this.no_of_months);
           let cal = dps * month;
           let result = cal.toFixed(2);
-          return result;
+          let final = isNaN(result)? '':result;
+          return final;
       },
       total_interest_amount(){
             let number = 2400;
@@ -125,7 +126,8 @@ export default {
             let rate = parseFloat(this.annual_interest_rate);
             let cal = (dps*rate*month*(month+1))/number;
             let result = cal.toFixed(2);
-            return result;
+            let final = isNaN(result)? '':result;
+            return final;
       },
       total_amount(){
           let number = 2400;
@@ -137,7 +139,8 @@ export default {
           let add = 1+parseFloat(div);
           let cal = mul*add;
           let result = cal.toFixed(2);
-          return result;
+          let final = isNaN(result)? '':result;
+          return final;
       }
   }
 }
